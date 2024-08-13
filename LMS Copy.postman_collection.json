@@ -1,0 +1,653 @@
+{
+	"info": {
+		"_postman_id": "52afdc41-0602-457f-8b91-fe21a48cd2a1",
+		"name": "LMS Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26798788"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"passwordzzz\",\r\n    \"email\": \"mohy@admin.com\",\r\n    \"name\" : \"ahmedmohy000\"\r\n    ,\"phone\" : \"022222222\"\r\n    ,\"role\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/Reg/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"Reg",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"abcdeghijkl\",\r\n\"email\": \"ahmed@admin.com\"\r\n\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/Reg/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"Reg",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/Reg/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"Reg",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "courses",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "79c6d3555dc0db1ff29ba3eb0624cfa2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "test12",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "31",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/HP/Downloads/22.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/course/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"course",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "math4",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "25",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/HP/Downloads/chalkboard-with-math-elements_1411-88.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/course/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"course",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/course/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"course",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "dbe9c461b769a51b79a8a9e140aaae2e",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/course/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"course",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/course",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"course"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "99",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "instructorsmg",
+					"item": [
+						{
+							"name": "create ins",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "mohamed mostafa",
+											"type": "text"
+										},
+										{
+											"key": "Field",
+											"value": "english instructor blablablabla",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/HP/Downloads/23.jpg"
+										},
+										{
+											"key": "email",
+											"value": "mohiiy22@admin.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/instructormg/createins",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"instructormg",
+										"createins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update ins",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "ahmed kamal",
+											"type": "text"
+										},
+										{
+											"key": "Field",
+											"value": "math instructor bla bla bla",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/HP/Downloads/23.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/instructormg/17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"instructormg",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete ins",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/instructormg/17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"instructormg",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show ins",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "dbe9c461b769a51b79a8a9e140aaae2e",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/instructormg/17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"instructormg",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search ins",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:4000/instructormg",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"instructormg"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "bla",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Assign",
+					"item": [
+						{
+							"name": "assign",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "3f57e3be4f0775ad0dffdf667fc8cd61",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n       \"course_name\": \"math\",\r\n       \"instructor_name\":\"ahmed kamal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/assign/sure",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"assign",
+										"sure"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "instructor",
+			"item": [
+				{
+					"name": "Viewenrolled",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "fd3e25037fdf74e33ae968e32ce12fba",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/instructor/mohamed abdallah",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"instructor",
+								"mohamed abdallah"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setgrades",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "fd3e25037fdf74e33ae968e32ce12fba",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course_name\": \"history\",\r\n    \"student_name\": \"mohamed\",\r\n    \"grade\": \"90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/instructor/mohsen/setgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"instructor",
+								"mohsen",
+								"setgrade"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "register course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "168112141f395ca22e1346488b0e5941",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_name\":\"mohamed\",\r\n    \"phone\" : \"01111111111111\",\r\n    \"email\" : \"mohaamed@student.com\",\r\n    \"course_name\":\"arabic\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/studentreg/regcourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"studentreg",
+								"regcourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show register course",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "168112141f395ca22e1346488b0e5941",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/studentreg/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"studentreg",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
