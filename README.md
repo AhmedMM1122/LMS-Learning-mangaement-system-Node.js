@@ -45,3 +45,9 @@ Routes for Student:-
 registercourse.js
 
 Login/logout :- Reg.js
+
+_________________________________________________________________
+
+Requirements:-
+--------------
+Install Node.js , Express.js , Postman (To Test Requests) , Sql (Database)
